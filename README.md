@@ -1,2 +1,1 @@
-多个target测试
-v0.1.1
+MoreApp created at 20190604165348

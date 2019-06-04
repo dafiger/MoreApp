@@ -1,21 +1,32 @@
 //
 //  ViewController.m
-//  MoreApp
+//  OCProjectDemo
 //
-//  Created by wpf on 2019/3/27.
-//  Copyright © 2019 wpf. All rights reserved.
+//  Created by wangpf on 2019/6/3.
+//  Copyright © 2019 dafiger. All rights reserved.
 //
 
 #import "ViewController.h"
 
-#ifdef WANG_ON
+#ifdef Target1_ON
+#define HOSTURL @"http://www.xxx.com/aaa"
+#elif Target2_ON
+#define HOSTURL @"http://www.xxx.com/bbb"
+#else
+#define HOSTURL @"http://www.xxx.com/ccc"
+#endif
+
+#ifdef Pro_ON
 #define MYREQURL @"http://www.baidu.com/111"
 
-#elif PENG_ON
+#elif Test_ON
 #define MYREQURL @"http://www.baidu.com/222"
 
-#else
+#elif UAT_ON
 #define MYREQURL @"http://www.baidu.com/333"
+
+#else
+#define MYREQURL @"http://www.baidu.com/444"
 
 #endif
 
@@ -35,8 +46,7 @@ __FILE__, __LINE__, \
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MYLog(@"定义宏文件:%@",MYREQURL);
-    // Do any additional setup after loading the view.
+    MYLog(@"定义宏文件:%@\n%@",HOSTURL,MYREQURL);
 }
 
 
